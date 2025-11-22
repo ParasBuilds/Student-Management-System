@@ -2,16 +2,11 @@
 #define STUDENT_H
 
 /* student.h
-   Declarations for Student struct and student-related functions.
-   Kept intentionally simple and student-style commented.
+   Student struct and student-related function declarations.
 */
 
 #include <stdio.h>
 
-/* Student record structure
-   - marks is a dynamic array allocated with malloc/calloc
-   - marks_count keeps number of subjects
-*/
 typedef struct {
     int id;
     char name[64];
@@ -32,5 +27,6 @@ void modify_student(void);
 void delete_student(void);
 void sort_by_id(void);
 void sort_by_name(void);
+void print_student(const Student *s);
 
 #endif /* STUDENT_H */
