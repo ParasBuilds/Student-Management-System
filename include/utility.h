@@ -2,10 +2,15 @@
 #define UTILITY_H
 
 /* utility.h
-   Helper I/O and dynamic array utilities used across the project.
+   Helpers for input, dynamic array and global variables.
 */
 
 #include "student.h"
+
+/* globals (defined in utility.c) */
+extern Student *arr;
+extern int count;
+extern int capacity;
 
 /* Input helpers */
 void trim_newline(char *s);
