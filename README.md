@@ -73,18 +73,6 @@ This project covers multiple topics from the syllabus:
 
 7. String handling (strtok, strcpy, strcmp, etc.)
 
-⚙️ How to Compile
-
-Open terminal in the project folder and run:
-
-gcc src/*.c -Iinclude -o sms.exe
-
-▶️ How to Run
-
-Windows PowerShell:
-
-.\sms.exe
-
 📂 Data Storage
 
 The program stores all records in:
