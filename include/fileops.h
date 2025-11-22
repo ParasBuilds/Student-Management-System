@@ -2,13 +2,11 @@
 #define FILEOPS_H
 
 /* fileops.h
-   File read/write operations for persistent storage.
-   Functions save/load to a human-readable text file.
+   File operations to save/load records to/from students.txt
 */
 
 #include "student.h"
 
-/* File operations */
 void load_from_file(void);
 int save_to_file(void);
 
