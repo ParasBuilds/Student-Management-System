@@ -1,38 +1,33 @@
 #include <stdio.h>
 
-/* Including headers for all modules */
-#include "../include/student.h"
-#include "../include/utility.h"
-#include "../include/fileops.h"
-#include "../include/extras.h"
+#include "student.h"
+#include "utility.h"
+#include "fileops.h"
+#include "extras.h"
 
-/* 
-   main.c
-   -------
-   This is the entry point of the program. It mainly loads existing data,
-   then shows the menu repeatedly until the user exits.
+/* main.c
+   Entry point. Loads data, runs menu, cleans up and exits.
 */
 
-void menu(); // forward declaration
+void menu(void);
 
-int main() {
+int main(void)
+{
+    printf("Student Management System (Windows-ready, modular)\n");
 
-    printf("Student Management System (Modular Version)\n");
-
-    /* Load any previously saved student records */
+    /* load saved data (if any) */
     load_from_file();
 
-    /* Start the menu loop */
+    /* show menu loop */
     menu();
 
     return 0;
 }
 
-/* The main menu options */
-void menu() {
-
+/* menu implementation */
+void menu(void)
+{
     while (1) {
-
         printf("\n=== Student Management System ===\n");
         printf("1. Add Student\n");
         printf("2. Display All Students\n");
@@ -57,20 +52,17 @@ void menu() {
         else if (choice == 8) extras_demo();
         else if (choice == 9) marks_matrix_demo();
         else if (choice == 10) {
-
-            /* Free all dynamic memory before exiting */
-            extern Student *arr;
-            extern int count;
+            /* free everything and exit */
             for (int i = 0; i < count; i++)
                 free_student_marks(&arr[i]);
-
             free(arr);
-
-            printf("Exiting program...\n");
+            arr = NULL;
+            count = 0;
+            capacity = 0;
+            printf("Goodbye!\n");
             break;
-        }
-        else {
-            printf("Invalid choice, please try again.\n");
+        } else {
+            printf("Invalid choice. Try again.\n");
         }
     }
 }
