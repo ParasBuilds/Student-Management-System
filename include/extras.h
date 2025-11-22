@@ -2,8 +2,7 @@
 #define EXTRAS_H
 
 /* extras.h
-   Small demo functions to cover recursion, pointers and 2D array usage.
-   These are separate so main functionality stays modular.
+   Small demo functions (recursion, pointers, 2D matrix)
 */
 
 long factorial(long n);
